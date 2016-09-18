@@ -1,8 +1,11 @@
 class Attachment < ApplicationRecord
   belongs_to :project
+
   has_attached_file :image,
                     storage: :s3,
                     s3_credentials: Proc.new{|a| a.instance.s3_credentials}
+
+  validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 
   def s3_credentials
     {bucket: ENV["BUCKET"],

@@ -5,5 +5,6 @@ Rails.application.routes.draw do
 
   get '/products', to: 'products#index'
   get '/products/:title', to: 'products#show'
-  get '/upload', to: 'projects#new'
+  resources :projects, only: [:new, :create, :show]
+  resources :attachments, only: [:new, :create]
 end
