@@ -1,4 +1,5 @@
-<%= form_for @attachment, html: { multipart: true } do |f| %>
-  <%= f.file_field :image %>
+<%= form_for @attachment do |f| %>
+  <%= f.hidden_field :project_id, :value => @attachment.project.id %>
+  <%= f.file_field :image, class: 'form-control'%>
   <%= f.submit "Upload Image" %>
 <% end %>

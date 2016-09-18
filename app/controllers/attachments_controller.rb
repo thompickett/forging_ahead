@@ -1,5 +1,9 @@
 class AttachmentsController < ApplicationController
 
+  def show
+    @attachment = Attachment.find(params[:id])
+  end
+
   def new
     @attachment = Attachment.new(project_id: params[:project])
   end
@@ -7,7 +11,8 @@ class AttachmentsController < ApplicationController
   def create
     @attachment = Attachment.new(attachment_params)
     if @attachment.save
-      redirect_to project_path(@attachment.project)
+      flash[:success] = "The photo was added!"
+      redirect_to attachment_path(@attachment)
     else
       render :new
     end
@@ -16,7 +21,7 @@ class AttachmentsController < ApplicationController
   private
 
   def attachment_params
-    params.require(:attachment).permit(:image)
+    params.require(:attachment).permit(:image, :project_id)
   end
 
 
