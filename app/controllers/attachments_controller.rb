@@ -6,7 +6,6 @@ class AttachmentsController < ApplicationController
 
   def create
     @attachment = Attachment.new(attachment_params)
-    binding.pry
     if @attachment.save
       redirect_to project_path(@attachment.project)
     else
