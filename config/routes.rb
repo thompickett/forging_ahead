@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/', to: 'dashboard#home'
+  get '/about', to: 'dashboard#about'
+  get '/contact', to: 'dashboard#contact'
+
+  get '/products', to: 'products#index'
+  get '/products/:title', to: 'products#show'
+  resources :projects, only: [:new, :create, :show]
+  resources :attachments, only: [:new, :create, :show]
 end
