@@ -1,4 +1,28 @@
-<% @styles.each do |style| %>
-  <p><%=  style.name %>
+<style type="text/css">
+  tab2 { padding-left: 12px; }
+</style>
 
+<% @styles.each do |style| %>
+
+  <h2><%=  style.name.capitalize %></h2>
+
+  <%  style.projects.each do |project| %>
+
+    <p><tab2><%=  project.name.capitalize %></tab2></p>
+
+    <%  project.attachments.each do |attachment| %>
+      <%= link_to image_tag(attachment.image.url(:thumb)), attachment.image.url, target: '_blank' %>
+    <% end %>
+
+    <%= form_for Attachment.new do |f| %>
+      <%= f.hidden_field :project_id, :value => project.id %>
+      <%= f.file_field :image, class: 'form-control'%>
+      <%= f.submit "Upload Image" %>
+    <% end %>
+
+  <% end %>
 <% end %>
+
+<p>
+  <%= link_to "Create New Project", new_project_path %>
+</p>

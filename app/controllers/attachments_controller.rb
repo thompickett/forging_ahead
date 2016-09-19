@@ -12,7 +12,7 @@ class AttachmentsController < ApplicationController
     @attachment = Attachment.new(attachment_params)
     if @attachment.save
       flash[:success] = "The photo was added!"
-      redirect_to attachment_path(@attachment)
+      redirect_to product_path(@attachment.project.product.name)
     else
       render :new
     end

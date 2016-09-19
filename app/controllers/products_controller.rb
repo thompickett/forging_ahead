@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   end
 
   def show
-    product = Product.find_by(name: params[:title])
+    product = Product.find_by(name: params[:name])
     @styles = Style.joins(:projects).where(projects: { product_id: product.id }).uniq
   end
 
