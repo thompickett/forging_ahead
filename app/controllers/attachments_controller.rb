@@ -11,10 +11,9 @@ class AttachmentsController < ApplicationController
   def create
     @attachment = Attachment.new(attachment_params)
     if @attachment.save
-      flash[:success] = "The photo was added!"
-      redirect_to attachment_path(@attachment)
+      redirect_to admin_product_path(@attachment.project.product.name)
     else
-      render :new
+      redirect_to admin_product_path(@attachment.project.product.name)
     end
   end
 
