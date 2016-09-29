@@ -1,0 +1,20 @@
+<div class="projects" >
+<table>
+  <% @product_styles.each_slice(3) do |slice| %>
+    <tr>
+    <% slice.each do |product_style| %>
+      <td>
+        <div class="style" id="<%="style-#{product_style.id}"%>">
+          <div><%= image_tag product_style.attachment.image.url, width:"200", height: "200" %></div>
+          <%= product_style.style.name.capitalize %><br />
+        </div>
+      </td>
+
+    <% end %>
+    </tr>
+  <% end %>
+</table>
+</div>
+<div class="carousel">
+
+</div>

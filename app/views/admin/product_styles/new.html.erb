@@ -1,0 +1,7 @@
+<%= form_for @product_style, url: :admin_product_styles, method: :post do |f| %>
+  <%= f.label :product_id, 'Product type' %><br>
+  <%= f.collection_select :product_id, @products, :id, :name %><br>
+  <%= f.label :style_id, 'Style' %><br>
+  <%= f.collection_select :style_id, @styles, :id, :name %><br>
+  <%= f.submit 'Create Project' %>
+<% end %>

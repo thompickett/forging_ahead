@@ -1,0 +1,32 @@
+.carousel {
+  position: absolute;
+  /*background-color: grey;*/
+  margin-top: 16%;
+  z-index: 0;
+}
+
+.blur {
+  filter: blur(2px);
+  opacity: 0.8;
+}
+
+.slick-prev {
+  margin-top: 2.5%;
+  position: absolute;
+  background-color: grey;
+  opacity: 0.7;
+  color: red;
+  border: none;
+  z-index: 1;
+}
+
+.slick-next {
+  margin-top: -5.15%;
+  margin-left: 95%;
+  position: absolute;
+  background-color: grey;
+  opacity: 0.7;
+  color: red;
+  border: none;
+  z-index: 1;
+}

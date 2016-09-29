@@ -10,25 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160917192107) do
+ActiveRecord::Schema.define(version: 20160928164855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "products", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "attachments", force: :cascade do |t|
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "product_styles_id"
+    t.index ["product_styles_id"], name: "index_attachments_on_product_styles_id", using: :btree
   end
 
-  create_table "projects", force: :cascade do |t|
-    t.integer  "product_id"
-    t.integer  "style_id"
+  create_table "product_styles", force: :cascade do |t|
+    t.integer "style_id"
+    t.integer "product_id"
+    t.integer "attachment_id"
+    t.index ["attachment_id"], name: "index_product_styles_on_attachment_id", using: :btree
+    t.index ["product_id"], name: "index_product_styles_on_product_id", using: :btree
+    t.index ["style_id"], name: "index_product_styles_on_style_id", using: :btree
+  end
+
+  create_table "products", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_projects_on_product_id", using: :btree
-    t.index ["style_id"], name: "index_projects_on_style_id", using: :btree
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "attachment_id"
+    t.index ["attachment_id"], name: "index_products_on_attachment_id", using: :btree
   end
 
   create_table "styles", force: :cascade do |t|
@@ -37,6 +49,9 @@ ActiveRecord::Schema.define(version: 20160917192107) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "projects", "products"
-  add_foreign_key "projects", "styles"
+  add_foreign_key "attachments", "product_styles", column: "product_styles_id"
+  add_foreign_key "product_styles", "attachments"
+  add_foreign_key "product_styles", "products"
+  add_foreign_key "product_styles", "styles"
+  add_foreign_key "products", "attachments"
 end
