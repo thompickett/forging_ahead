@@ -1,21 +1,58 @@
-<div class="projects" >
-<table>
-  <% @product_styles.each_slice(3) do |slice| %>
-    <tr>
-    <% slice.each do |product_style| %>
-      <td>
-        <div class="style" id="<%="style-#{product_style.id}"%>">
-          <div><%= image_tag product_style.attachment.image.url, width:"200", height: "200" %></div>
-          
-          <%= product_style.style.name.capitalize %><br />
+<div class="container-fluid">
+  <div class="row">
+    <% @product_styles.each do |product_style| %>
+    <div class="col-sm-3">
+      <div class="card card-block style" id="style-<%=product_style.id%>" >
+        <img class="card-img-top" src="<%= product_style.attachment.image.url %>" >
+        <div class="card-block">
+          <h4 class="card-title"><%= product_style.style.name %></h4>
         </div>
-      </td>
-
-    <% end %>
-    </tr>
+      </div>
+    </div>
   <% end %>
-</table>
-</div>
-<div class="carousel">
 
+  </div>
+</div>
+
+<div class="jumbotron">
+  <!-- <div class="container"> -->
+  <ul id="lightSlider">
+    <li data-thumb="http://sachinchoolur.github.io/lightslider/img/thumb/cS-1.jpg">
+        <img src="http://sachinchoolur.github.io/lightslider/img/cS-1.jpg" />
+    </li>
+    <li data-thumb="http://sachinchoolur.github.io/lightslider/img/thumb/cS-2.jpg">
+        <img src="http://sachinchoolur.github.io/lightslider/img/cS-2.jpg" />
+    </li>
+    <li data-thumb="http://sachinchoolur.github.io/lightslider/img/thumb/cS-3.jpg">
+        <img src="http://sachinchoolur.github.io/lightslider/img/cS-3.jpg" />
+    </li>
+    <li data-thumb="http://sachinchoolur.github.io/lightslider/img/thumb/cS-4.jpg">
+        <img src="http://sachinchoolur.github.io/lightslider/img/cS-4.jpg" />
+    </li>
+    <li data-thumb="http://sachinchoolur.github.io/lightslider/img/thumb/cS-5.jpg">
+        <img src="http://sachinchoolur.github.io/lightslider/img/cS-5.jpg" />
+    </li>
+    <li data-thumb="http://sachinchoolur.github.io/lightslider/img/thumb/cS-6.jpg">
+        <img src="http://sachinchoolur.github.io/lightslider/img/cS-6.jpg" />
+    </li>
+    <li data-thumb="http://sachinchoolur.github.io/lightslider/img/thumb/cS-7.jpg">
+        <img src="http://sachinchoolur.github.io/lightslider/img/cS-7.jpg" />
+    </li>
+    <li data-thumb="http://sachinchoolur.github.io/lightslider/img/thumb/cS-8.jpg">
+        <img src="http://sachinchoolur.github.io/lightslider/img/cS-8.jpg" />
+    </li>
+    <li data-thumb="http://sachinchoolur.github.io/lightslider/img/thumb/cS-9.jpg">
+        <img src="http://sachinchoolur.github.io/lightslider/img/cS-9.jpg" />
+    </li>
+    <li data-thumb="http://sachinchoolur.github.io/lightslider/img/thumb/cS-10.jpg">
+        <img src="http://sachinchoolur.github.io/lightslider/img/cS-10.jpg" />
+    </li>
+    <li data-thumb="http://sachinchoolur.github.io/lightslider/img/thumb/cS-11.jpg">
+        <img src="http://sachinchoolur.github.io/lightslider/img/cS-12.jpg" />
+    </li>
+    <li data-thumb="http://sachinchoolur.github.io/lightslider/img/thumb/cS-13.jpg">
+        <img src="http://sachinchoolur.github.io/lightslider/img/cS-13.jpg" />
+    </li>
+  </ul>
+  </div>
 </div>

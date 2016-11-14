@@ -51,4 +51,17 @@ $(document).ready(function(){
     });
 
   });
+
+  $('#lightSlider').lightSlider({
+    // basics
+    gallery: true,
+    item: 1,
+    loop:true,
+    slideMargin: 10,
+    thumbItem: 9,
+
+    // controls
+    prevHtml: '<',
+    nextHtml: '>',
+  });
 });
