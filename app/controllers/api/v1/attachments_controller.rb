@@ -14,7 +14,13 @@ class Api::V1::AttachmentsController < Api::ApiController
   def style_attachments
     product_style = ProductStyles.find(params[:id])
     attachments = product_style.attachments.map do |attachment|
-      attachment.image(:thumb)
+      { original:  { img: attachment.image,
+                     style: attachment.image.options[:styles][:original]
+               },
+        thumb: { img: attachment.image(:thumb),
+                 style: attachment.image.options[:styles][:thumb]
+               }
+      }
     end
     respond_with attachments
   end

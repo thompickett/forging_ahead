@@ -1,37 +1,69 @@
 $(document).ready(function(){
 
+  photos = []
+
+  // let slider = $('#lightSlider').lightSlider({
+  //   // basics
+  //   // gallery: true,
+  //   item: 1,
+  //   adaptiveHeight: true,
+  //   enableDrag: true,
+  //   loop:true,
+  //   pager: false,
+  //   // thumbItem: 9,
+  //   onAfterSlide: function (el) {
+  //     var width = $($('.active')[0].innerHTML)[0].width
+  //     $('.productStyleDisplay').width(width)
+  //   },
+  //   // controls
+  //   prevHtml: '<',
+  //   nextHtml: '>',
+  // });
+
   let blurBackground = function() {
     $('.projects').addClass('blur');
   };
 
-  let unSlick = function() {
-    let initialized = $('.carousel')[0].classList.contains("slick-initialized");
-    if (initialized) {
-      $('.carousel').slick('unslick');
-      $('.carousel')[0].innerHTML = "";
-    }
-  };
-
-  let slick = function() {
-    $('.carousel').slick({
-      infinite: true,
-      slidesToShow: 6,
-      slidesToScroll: 1
-    });
-  };
-
   let createCarouselDivs = function(data) {
-    if (data.length > 0) {
-      unSlick();
-      data.forEach(function(attachment,index) {
-        $('.carousel')[0].innerHTML = $('.carousel')[0].innerHTML + "<div><img src='" + attachment + "'></div>";
-      });
-      slick();
-    }
+    blurBackground()
+    data[0]
+    var img = new Image();
+    img.onload = function() {
+      width = img.naturalWidth,
+      height = img.naturalHeight
+    };
+    img.src = data[0].original.img
+    var width = img.width
+    $('.productStyleDisplay').width(width + 40)
+
+    let carouselIndicators = ""
+    let slideWrappers = ""
+
+    data.forEach(function(image,index) {
+      carouselIndicators = carouselIndicators + '<li data-target="#myCarousel" data-slide-to="' +
+      index + '"';
+      slideWrappers = slideWrappers + '<div class="carousel-item';
+      if (index === 0) {
+        carouselIndicators = carouselIndicators + 'class="active"';
+        slideWrappers = slideWrappers + ' active';
+      }
+      carouselIndicators = carouselIndicators + '></li>';
+      slideWrappers = slideWrappers + '"><img src="' +
+      image.original.img +
+      '"></div>';
+    });
+
+    $('.carousel-inner')[0].innerHTML = slideWrappers;
+    $('.carousel-indicators')[0].innerHTML = carouselIndicators;
+
   };
+
+  $('#myCarousel').on('slid.bs.carousel', function () {
+    var width = $($('div.active')[0].innerHTML)[0].width
+    $('.productStyleDisplay').width(width + 40)
+  })
 
   $(".style").click(function(){
-
     let postParams = {
       id: this.id.split("-")[1]
     };
@@ -43,7 +75,6 @@ $(document).ready(function(){
       dataType: "json",
       success: function(data) {
         createCarouselDivs(data)
-        blurBackground()
       },
       error: function(data) {
         alert("couldn't create that link")
@@ -52,16 +83,4 @@ $(document).ready(function(){
 
   });
 
-  $('#lightSlider').lightSlider({
-    // basics
-    gallery: true,
-    item: 1,
-    loop:true,
-    slideMargin: 10,
-    thumbItem: 9,
-
-    // controls
-    prevHtml: '<',
-    nextHtml: '>',
-  });
 });
