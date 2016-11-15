@@ -2,7 +2,7 @@
   <div class="row">
     <% @product_styles.each do |product_style| %>
     <div class="col-sm-3">
-      <div class="card card-block style" id="style-<%=product_style.id%>" >
+      <div class="card card-block style" id="style-<%=product_style.id%>" style="background-color:#909292" >
         <img class="card-img-top" src="<%= product_style.attachment.image.url %>" >
         <div class="card-block">
           <h4 class="card-title"><%= product_style.style.name %></h4>
