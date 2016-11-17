@@ -58,12 +58,16 @@ $(document).ready(function(){
 
   };
 
+  let showCarousel = function() {
+    $('.productStyleDisplay').removeClass('hidden')
+  };
+
   $('#myCarousel').on('slid.bs.carousel', function () {
     var width = $($('div.active')[0].innerHTML)[0].width
     $('.productStyleDisplay').width(width + 40)
   })
 
-  $(".style").click(function(){
+  $(".projectStyle").click(function(){
     let postParams = {
       id: this.id.split("-")[1]
     };
@@ -74,7 +78,8 @@ $(document).ready(function(){
       method: "GET",
       dataType: "json",
       success: function(data) {
-        createCarouselDivs(data)
+        showCarousel();
+        createCarouselDivs(data);
       },
       error: function(data) {
         alert("couldn't create that link")
