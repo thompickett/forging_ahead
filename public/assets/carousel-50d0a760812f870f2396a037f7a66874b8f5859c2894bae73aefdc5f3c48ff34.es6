@@ -2,7 +2,7 @@ $(document).ready(function(){
 
   photos = []
 
-  // let slider = $('#lightSlider').lightSlider({
+  // var slider = $('#lightSlider').lightSlider({
   //   // basics
   //   // gallery: true,
   //   item: 1,
@@ -36,8 +36,8 @@ $(document).ready(function(){
     var width = img.width
     $('.productStyleDisplay').width(width + 40)
 
-    let carouselIndicators = ""
-    let slideWrappers = ""
+    var carouselIndicators = ""
+    var slideWrappers = ""
 
     data.forEach(function(image,index) {
       carouselIndicators = carouselIndicators + '<li data-target="#myCarousel" data-slide-to="' +
@@ -58,7 +58,7 @@ $(document).ready(function(){
 
   };
 
-  let showCarousel = function() {
+  var showCarousel = function() {
     $('.productStyleDisplay').removeClass('hidden')
   };
 
@@ -68,7 +68,7 @@ $(document).ready(function(){
   })
 
   $(".projectStyle").click(function(){
-    let postParams = {
+    var postParams = {
       id: this.id.split("-")[1]
     };
 
