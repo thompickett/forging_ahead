@@ -6,4 +6,14 @@
 .card {
   background-color:#C5D4D9 !important;
   text-align: center;
+  margin-top: 1em;
+}
+
+.projectStyle:hover {
+  background-color:#AEBBBF !important;
+}
+
+.project-style-img {
+  width: 15em;
+  height: 15em;
 }
