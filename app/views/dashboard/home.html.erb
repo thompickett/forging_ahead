@@ -1,3 +1,101 @@
-Hello
+<div id="main-page-background" >
+  <img class="" id="main-page-background-photo" src="<%= asset_path('spiral-stair.png') %>" alt="light" />
+</div>
 
-<%= link_to "Products", products_path %>
+<h1 class='pageText titleText' >Forging Ahead Inc.</h1>
+<h2 class='pageText ownerText' >by Rod Pickett</h2>
+
+<div id="about">
+  <%= image_tag asset_path('light_one_alt.png'), alt:"light", class:"light-dif", id:"about-light" %>
+  <a id="about-link" class="pageText" href="#">About us</a>
+</div>
+
+<div id="contact">
+  <img class="light-dif" id="contact-light" src="<%= asset_path('light_one_alt.png') %>" alt="light" />
+  <a id="contact-link" class="pageText" href="#">Contact us</a>
+</div>
+
+<div id="store">
+  <img class="light-dif" id="store-light" src="<%= asset_path('light_one_alt.png') %>" alt="light" />
+  <a id="store-link" class="pageText" href="#">Store</a>
+</div>
+
+<div id="gallery">
+  <img class="light-dif" id="gallery-light" src="<%= asset_path('light_one_alt.png') %>" alt="light" />
+  <a id="gallery-link" class="pageText" href="<%= products_path %>">Gallery</a>
+</div>
+
+<div class='pageText listText' id="description">
+  <p>Moving metal</p>
+  <p>Making it beautiful</p>
+  <p>Creating functional art</p>
+</div>
+
+<p class='pageText addressText'>
+  211 S. Skylane Dr., Durango, CO, 81303 ~ (970)259-9706
+</p>
+
+<p class='pageText copyrightText'>
+  Copyright Forging Ahead Inc 2016
+</p>
+
+<script type="text/javascript">
+  var about = document.getElementById("about");
+  var aboutLight = document.getElementById("about-light");
+  var aboutLink = document.getElementById("about-link");
+
+  var contact = document.getElementById("contact");
+  var contactLight = document.getElementById("contact-light");
+  var contactLink = document.getElementById("contact-link");
+
+  var store = document.getElementById("store");
+  var storeLight = document.getElementById("store-light");
+  var storeLink = document.getElementById("store-link");
+
+  var gallery = document.getElementById("gallery");
+  var galleryLight = document.getElementById("gallery-light");
+  var galleryLink = document.getElementById("gallery-link");
+
+  about.addEventListener("mouseover", lightUp);
+  gallery.addEventListener("mouseover", lightUp);
+  store.addEventListener("mouseover", lightUp);
+  contact.addEventListener("mouseover", lightUp);
+
+  function lightUp() {
+    if (this.id === "about") {
+      aboutLight.src = "<%= asset_path('light_one.png') %>"
+      aboutLink.classList.add("lit-up-color")
+    } else if (this.id === "contact") {
+      contactLight.src = "<%= asset_path('light_one.png') %>"
+      contactLink.classList.add("lit-up-color")
+    } else if (this.id === "store") {
+      storeLight.src = "<%= asset_path('light_one.png') %>"
+      storeLink.classList.add("lit-up-color")
+    } else if (this.id === "gallery") {
+      galleryLight.src = "<%= asset_path('light_one.png') %>"
+      galleryLink.classList.add("lit-up-color")
+    }
+  };
+
+  about.addEventListener("mouseout", lightDown);
+  gallery.addEventListener("mouseout", lightDown);
+  contact.addEventListener("mouseout", lightDown);
+  store.addEventListener("mouseout", lightDown);
+
+  function lightDown() {
+    if (this.id === "about") {
+      aboutLight.src = "<%= asset_path('light_one_alt.png') %>"
+      aboutLink.classList.remove("lit-up-color")
+    } else if (this.id === "contact") {
+      contactLight.src = "<%= asset_path('light_one_alt.png') %>"
+      contactLink.classList.remove("lit-up-color")
+    } else if (this.id === "store") {
+      storeLight.src = "<%= asset_path('light_one_alt.png') %>"
+      storeLink.classList.remove("lit-up-color")
+    } else if (this.id === "gallery") {
+      galleryLight.src = "<%= asset_path('light_one_alt.png') %>"
+      galleryLink.classList.remove("lit-up-color")
+    }
+  };
+
+</script>
