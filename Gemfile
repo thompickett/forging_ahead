@@ -25,7 +25,6 @@ gem 'jbuilder', '~> 2.5'
 # Use gems beloe to use paperclip to upload file to and display from AWS S3
 gem 'paperclip', '~> 4.2'
 gem 'aws-sdk', '~> 1.6'
-gem "asset_sync"
 
 # Use figaro for concealing Env vars
 gem 'figaro'
