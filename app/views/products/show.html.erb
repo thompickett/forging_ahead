@@ -1,21 +1,44 @@
-<div class="projects" >
-<table>
-  <% @product_styles.each_slice(3) do |slice| %>
-    <tr>
-    <% slice.each do |product_style| %>
-      <td>
-        <div class="style" id="<%="style-#{product_style.id}"%>">
-          <div><%= image_tag product_style.attachment.image.url, width:"200", height: "200" %></div>
-          
-          <%= product_style.style.name.capitalize %><br />
+<%= render 'shared/nav-bar' %>
+<div class="container-fluid projects">
+  <div class="row">
+    <% @product_styles.each do |product_style| %>
+    <div class="col-sm-3">
+      <div class="card projectStyle" id="projectStyle-<%=product_style.id%>">
+        <div class="card-block">
+          <img class="card-img-top project-style-img" src="<%= product_style.attachment.image.url %>" >
         </div>
-      </td>
-
-    <% end %>
-    </tr>
+        <h4 class="card-title"><%= product_style.style.name %></h4>
+      </div>
+    </div>
   <% end %>
-</table>
-</div>
-<div class="carousel">
 
+  </div>
+</div>
+
+<!-- <div class="productStyleDisplay" >
+  <div class='card card-block' >
+    <div id='lightSlider' >
+    </div>
+  </div>
+</div> -->
+
+<div class="productStyleDisplay hidden" >
+  <div class='card card-block' >
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+      </ol>
+
+      <div class="carousel-inner" role="listbox">
+      </div>
+
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="icon-prev" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="icon-next" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
 </div>
