@@ -7,6 +7,7 @@ class Attachment < ApplicationRecord
                 convert_options: { thumb: "-quality 85 -strip",
                                    original: "-quality 85 -strip" },
                 storage: :s3,
+                s3_protocol: :https,
                 s3_credentials: {access_key_id: ENV["AWS_KEY"], secret_access_key: ENV["AWS_SECRET"]},
                 bucket: ENV["YOUR_BUCKET"],
                 :url =>':s3_domain_url',

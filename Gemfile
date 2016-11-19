@@ -43,6 +43,8 @@ gem 'turbolinks', '~> 5'
 # Use the responders gem to serve up api endpoints with json
 gem "responders"
 
+gem 'rails_12factor', group: :production
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry-rails'
