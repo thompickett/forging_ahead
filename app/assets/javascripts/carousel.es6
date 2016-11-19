@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
-  photos = []
+  let photos = []
 
-  // var slider = $('#lightSlider').lightSlider({
+  // let slider = $('#lightSlider').lightSlider({
   //   // basics
   //   // gallery: true,
   //   item: 1,
@@ -12,7 +12,7 @@ $(document).ready(function(){
   //   pager: false,
   //   // thumbItem: 9,
   //   onAfterSlide: function (el) {
-  //     var width = $($('.active')[0].innerHTML)[0].width
+  //     let width = $($('.active')[0].innerHTML)[0].width
   //     $('.productStyleDisplay').width(width)
   //   },
   //   // controls
@@ -27,17 +27,17 @@ $(document).ready(function(){
   let createCarouselDivs = function(data) {
     blurBackground()
     data[0]
-    var img = new Image();
+    let img = new Image();
     img.onload = function() {
-      width = img.naturalWidth,
-      height = img.naturalHeight
+      let width = img.naturalWidth;
+      let height = img.naturalHeight;
     };
     img.src = data[0].original.img
-    var width = img.width
+    let width = img.width
     $('.productStyleDisplay').width(width + 40)
 
-    var carouselIndicators = ""
-    var slideWrappers = ""
+    let carouselIndicators = ""
+    let slideWrappers = ""
 
     data.forEach(function(image,index) {
       carouselIndicators = carouselIndicators + '<li data-target="#myCarousel" data-slide-to="' +
@@ -58,17 +58,17 @@ $(document).ready(function(){
 
   };
 
-  var showCarousel = function() {
+  let showCarousel = function() {
     $('.productStyleDisplay').removeClass('hidden')
   };
 
   $('#myCarousel').on('slid.bs.carousel', function () {
-    var width = $($('div.active')[0].innerHTML)[0].width
+    let width = $($('div.active')[0].innerHTML)[0].width
     $('.productStyleDisplay').width(width + 40)
   })
 
   $(".projectStyle").click(function(){
-    var postParams = {
+    let postParams = {
       id: this.id.split("-")[1]
     };
 
