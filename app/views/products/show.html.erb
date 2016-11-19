@@ -5,7 +5,7 @@
     <div class="col-sm-3">
       <div class="card projectStyle" id="projectStyle-<%=product_style.id%>">
         <div class="card-block">
-          <img class="card-img-top project-style-img" src="<%= product_style.attachment.image.url %>" >
+          <img class="card-img-top project-style-img" src="<%= product_style.attachment.image.url if product_style.attachment %>" >
         </div>
         <h4 class="card-title"><%= product_style.style.name %></h4>
       </div>

@@ -22,6 +22,9 @@ gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
+# Use sprockets-es6 to support es6 syntax in assets as .es6 files
+gem 'sprockets-es6'
+
 # Use gems beloe to use paperclip to upload file to and display from AWS S3
 gem 'paperclip', '~> 4.2'
 gem 'aws-sdk', '~> 1.6'
