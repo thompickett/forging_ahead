@@ -1,4 +1,4 @@
-<%= render 'shared/nav-bar' %>
+<%= render partial: 'shared/nav-bar', locals: { items: @product_styles } %>
 <div class="container-fluid projects">
   <div class="row">
     <% @product_styles.each do |product_style| %>
