@@ -1,25 +1,21 @@
-<style>
-table, th, td {
-  border: 5px solid white;
-}
-</style>
+<%= render partial: 'shared/nav-bar', locals: { items: @products} %>
 
 <h2>Gallery</h2>
-<table>
-<% @products.each_slice(3) do |slice| %>
-  <tr>
 
-  <% slice.each do |product| %>
-    <td>
-      <div>
-        <%= link_to image_tag(product.attachment.image.url, width:"250px"), product_path(product.name) if product.attachment %>
-      </div>
-      <div>
-      <%= link_to product.name, product_path(product.name) %><br />
-      </div>
-    </td>
+<div class="container-fluid projects">
+  <div class="row">
+    <% @products.each do |product| %>
+    <div class="col-sm-3">
+      <a href="/products/<%= product.name %>">
+        <div class="card">
+          <div class="card-block">
+            <img class="card-img-top project-style-img" src="<%= product.attachment.image.url if product.attachment %>" >
+          </div>
+          <h4 class="card-title"><%= product.name %></h4>
+        </div>
+      </a>
+    </div>
   <% end %>
 
-  </tr>
-<% end %>
-</table>
+  </div>
+</div>
