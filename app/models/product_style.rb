@@ -1,4 +1,4 @@
-class ProductStyles < ApplicationRecord
+class ProductStyle < ApplicationRecord
   belongs_to :product
   belongs_to :style
   belongs_to :attachment, required: false

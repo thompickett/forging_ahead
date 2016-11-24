@@ -12,7 +12,7 @@ class Api::V1::AttachmentsController < Api::ApiController
   end
 
   def style_attachments
-    product_style = ProductStyles.find(params[:id])
+    product_style = ProductStyle.find(params[:id])
     attachments = product_style.attachments.map do |attachment|
       { original:  { img: attachment.image,
                      style: attachment.image.options[:styles][:original]
