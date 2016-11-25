@@ -3,12 +3,12 @@
   <div class="row">
     <% @product_styles.each do |product_style| %>
     <div class="col-sm-3">
-      <div class="card projectStyle" id="projectStyle-<%=product_style.id%>">
+      <a href="#" class="card projectStyle" id="projectStyle-<%=product_style.id%>" >
         <div class="card-block">
           <img class="card-img-top project-style-img" src="<%= product_style.attachment.image.url if product_style.attachment %>" >
         </div>
         <h4 class="card-title"><%= product_style.style.name %></h4>
-      </div>
+      </a>
     </div>
   <% end %>
 
@@ -23,22 +23,25 @@
 </div> -->
 
 <div class="productStyleDisplay hidden" >
-  <div class='card card-block' >
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-      </ol>
+    <div class='card card-block carousel-card' >
+    <i class="fa fa-times" aria-hidden="true" ></i>
+    <div class="carousel-card-bottom">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+        </ol>
 
-      <div class="carousel-inner" role="listbox">
+        <div class="carousel-inner" role="listbox">
+        </div>
+
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+          <span class="icon-prev" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+          <span class="icon-next" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
-
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="icon-prev" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="icon-next" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
     </div>
   </div>
 </div>

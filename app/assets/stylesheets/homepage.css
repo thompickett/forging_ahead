@@ -50,14 +50,6 @@
   bottom: 05px;
 }
 
-html {
-  background-color: #595959;
-  /*background: url(../main-page-background.jpg) no-repeat;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 10% 30%;*/
-}
-
 #about-light {
   position: absolute;
   left: 600px;
@@ -120,7 +112,6 @@ html {
 }
 
 #description {
-  /*color: #A3222F;*/
   color: #7A1721;
   font-weight: bold;
 }

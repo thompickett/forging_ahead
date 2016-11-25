@@ -25,7 +25,6 @@ $(document).ready(function(){
   };
 
   let createCarouselDivs = function(data) {
-    blurBackground()
     data[0]
     let img = new Image();
     img.onload = function() {
@@ -59,8 +58,14 @@ $(document).ready(function(){
   };
 
   let showCarousel = function() {
+    $('.projects').addClass('blur');
     $('.productStyleDisplay').removeClass('hidden')
   };
+
+  let hideCarousel = function() {
+    $('.projects').removeClass('blur');
+    $('.productStyleDisplay').addClass('hidden')
+  }
 
   $('#myCarousel').on('slid.bs.carousel', function () {
     let width = $($('div.active')[0].innerHTML)[0].width
@@ -87,5 +92,12 @@ $(document).ready(function(){
     });
 
   });
+
+  $('.carousel-card > .fa').click(function(){
+    $('.carousel-inner')[0].innerHTML = "";
+    $('.carousel-indicators')[0].innerHTML = "";
+    hideCarousel()
+  })
+
 
 });
