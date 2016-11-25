@@ -40,6 +40,9 @@ gem 'turbolinks', '~> 5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# use font-awesome-rails for interactive images 
+gem "font-awesome-rails"
+
 # Use the responders gem to serve up api endpoints with json
 gem "responders"
 
