@@ -19,11 +19,18 @@
 
 .carousel-card {
   background-color:#AEBBBF !important;
-  padding-top: 0px !important;
-  padding-right: 0px !important;
+  padding: 0px !important;
   text-align: right;
 }
 
 .carousel-card-bottom {
-  padding-right: 8% !important;
+  padding-left: 4% !important;
+  padding-right: 4% !important;
+  padding-bottom: 4% !important;
+}
+
+.carousel-card-bottom img {
+  display: block;
+  margin: auto;
+  width: 100%;
 }
