@@ -1,4 +1,7 @@
 <%= render partial: 'shared/nav-bar', locals: { items: @product_styles } %>
+
+<h2 class="page-title"><%= @product_styles.first.product.name %></h2>
+
 <div class="container-fluid projects">
   <div class="row">
     <% @product_styles.each do |product_style| %>
