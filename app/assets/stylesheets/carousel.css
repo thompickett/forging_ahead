@@ -24,9 +24,9 @@
 }
 
 .carousel-card-bottom {
-  padding-left: 4% !important;
-  padding-right: 4% !important;
-  padding-bottom: 4% !important;
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+  padding-bottom: 8px !important;
 }
 
 .carousel-card-bottom img {
