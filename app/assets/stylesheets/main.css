@@ -3,3 +3,9 @@ html body {
   font-family: Papyrus;
   text-decoration: none;
 }
+
+.page-title {
+  color: #84888A;
+  text-align: center;
+  font-weight: bold;
+}
