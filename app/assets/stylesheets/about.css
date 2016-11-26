@@ -1,0 +1,29 @@
+.dragonfly {
+  position: fixed;
+  display: inline-block;
+  width: 40%;
+  top:75%;
+  bottom: 0%;
+  left: 60%;
+  right: 0%;
+  margin: auto;
+}
+
+.about-content {
+  display: inline-block;
+  color: #A6ABAD;
+}
+
+.about-third-para {
+  margin-bottom: 0%;
+}
+
+.about-third-five-para {
+  width: 60%;
+}
+
+
+
+.about-fourth-para {
+  width: 72%;
+}
