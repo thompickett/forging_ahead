@@ -5,7 +5,7 @@ class DashboardController < ApplicationController
   end
 
   def about
-
+    
   end
-  
+
 end
