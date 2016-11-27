@@ -33,6 +33,13 @@ Rails.application.routes.draw do
     namespace 'v1' do
       resources :attachments, only: [:new, :create, :show]
       get '/style_attachments', to: 'attachments#style_attachments'
+
+
+
+
+      resources :products, only: [:show] do 
+        resources :product_styles, only: [:index]
+      end
     end
   end
 end
