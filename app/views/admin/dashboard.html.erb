@@ -2,24 +2,44 @@
 
 <div class='container-fluid'>
   <div class='row'>
+
     <div class='col-md-7 admin-prod-card'>
       <div class='card card-block'>
         <h5 class='card-title'>Products</h5>
           <% @products.each do |product| %>
-            <div class="btn btn-info"><%= product.name %></div>
+            <div class='btn btn-info products' id='product-<%= product.id %>'><%= product.name %></div>
           <% end %>
       </div>
     </div>
+
     <div class='col-md-5 admin-prod-sty-card'>
-      <div class='card card-block'>
-        <h5 class='card-title'>Product Styles</h5>
+      <div class='card card-block' id='prod-sty'>
+        <h5 class='card-title' id='prod-sty-title'>Product Styles</h5>
+        <form class='form-inline'>
+          <div class='form-group'>
+            <div class='col-xs-3.5'>
+              <label for='product'>Product</label>
+              <input type="text" id="product" class="form-control" placeholder="product">
+            </div>
+            <div class='col-xs-3.5'>
+              <label for='style'>Style</label>
+              <select id='style' class='form-control'>
+                <% @styles.each do |style| %>
+                  <option><%= style.name %></option>
+                <% end %>
+              </select>
+            </div>
+            <button type='submit' class='btn btn-primary btn-sm'>Submit</button>
+          </div>
+        </form></br>
       </div>
     </div>
+
     <div class='col-md-7 admin-sty-card'>
       <div class='card card-block'>
         <h5 class='card-title'>Styles</h5>
           <% @styles.each do |style| %>
-            <div class="btn btn-secondary"><%= style.name %></div>
+            <button type="button" class='btn btn-secondary' disabled><%= style.name %></button>
           <% end %>
       </div>
     </div>
