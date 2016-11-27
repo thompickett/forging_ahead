@@ -34,12 +34,10 @@ Rails.application.routes.draw do
       resources :attachments, only: [:new, :create, :show]
       get '/style_attachments', to: 'attachments#style_attachments'
 
-
-
-
-      resources :products, only: [:show] do 
-        resources :product_styles, only: [:index]
+      resources :products, only: [:show] do
+        resources :product_styles, only: [:index, :create]
       end
     end
   end
+  
 end

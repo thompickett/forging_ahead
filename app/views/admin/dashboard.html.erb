@@ -15,11 +15,11 @@
     <div class='col-md-5 admin-prod-sty-card'>
       <div class='card card-block' id='prod-sty'>
         <h5 class='card-title' id='prod-sty-title'>Product Styles</h5>
-        <form class='form-inline'>
+        <form class='form hidden'>
           <div class='form-group'>
             <div class='col-xs-3.5'>
-              <label for='product'>Product</label>
-              <input type="text" id="product" class="form-control" placeholder="product">
+              <label for='prodForm'>Product</label>
+              <input type="text" id="prodForm" class="form-control" placeholder="product" disabled>
             </div>
             <div class='col-xs-3.5'>
               <label for='style'>Style</label>
@@ -29,7 +29,7 @@
                 <% end %>
               </select>
             </div>
-            <button type='submit' class='btn btn-primary btn-sm'>Submit</button>
+            <div type='submit' class='btn btn-primary btn-sm'>Submit</div>
           </div>
         </form></br>
       </div>
