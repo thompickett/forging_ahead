@@ -1,1 +1,29 @@
 <%= render partial: 'admin/shared/nav-bar' %>
+
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-md-7 admin-prod-card'>
+      <div class='card card-block'>
+        <h5 class='card-title'>Products</h5>
+          <% @products.each do |product| %>
+            <div class="btn btn-info"><%= product.name %></div>
+          <% end %>
+      </div>
+    </div>
+    <div class='col-md-5 admin-prod-sty-card'>
+      <div class='card card-block'>
+        <h5 class='card-title'>Product Styles</h5>
+      </div>
+    </div>
+    <div class='col-md-7 admin-sty-card'>
+      <div class='card card-block'>
+        <h5 class='card-title'>Styles</h5>
+          <% @styles.each do |style| %>
+            <div class="btn btn-secondary"><%= style.name %></div>
+          <% end %>
+      </div>
+    </div>
+
+  </div>
+
+</div>
