@@ -5,25 +5,33 @@
   <img class="" id="main-page-background-photo" src="<%= asset_path('spiral-stair.png') %>" alt="light" />
 </div>
 
-<div class='nav-lights' id="about">
-  <%= image_tag asset_path('light_one_alt.png'), alt:"light", class:"light-dif", id:"about-light" %>
-  <a id="about-link" class="pageText" href="/about">About us</a>
-</div>
+<a href='/products'>
+  <div class='nav-lights'>
+    <img class="light-dif" id="gallery-light" src="<%= asset_path('light_one_alt.png') %>" alt="light" />
+    <div id="gallery-link" class="pageText">Gallery</div>
+  </div>
+</a>
 
-<div class='nav-lights' id="contact">
-  <img class="light-dif" id="contact-light" src="<%= asset_path('light_one_alt.png') %>" alt="light" />
-  <a id="contact-link" class="pageText" href="#">Contact us</a>
-</div>
+<a href='#'>
+  <div class='nav-lights'>
+    <img class="light-dif" id="store-light" src="<%= asset_path('light_one_alt.png') %>" alt="light" />
+    <div id="store-link" class="pageText">Store</div>
+  </div>
+</a>
 
-<div class='nav-lights' id="store">
-  <img class="light-dif" id="store-light" src="<%= asset_path('light_one_alt.png') %>" alt="light" />
-  <a id="store-link" class="pageText" href="#">Store</a>
-</div>
+<a href='/about'>
+  <div class='nav-lights'>
+    <%= image_tag asset_path('light_one_alt.png'), alt:"light", class:"light-dif", id:"about-light" %>
+    <div class='pageText' id="about-link">About us</div>
+  </div>
+</a>
 
-<div class='nav-lights' id="gallery">
-  <img class="light-dif" id="gallery-light" src="<%= asset_path('light_one_alt.png') %>" alt="light" />
-  <a id="gallery-link" class="pageText" href="<%= products_path %>">Gallery</a>
-</div>
+<a href='#'>
+  <div class='nav-lights'>
+    <img class="light-dif" id="contact-light" src="<%= asset_path('light_one_alt.png') %>" alt="light" />
+    <div id="contact-link" class="pageText">Contact us</div>
+  </div>
+</a>
 
 <div class='pageText listText' id="description">
   <p>Moving metal</p>
