@@ -1,0 +1,13 @@
+<%= render partial: 'admin/shared/nav-bar' %>
+<div class='container-fluid'>
+  <h1>Create New Admin!</h1>
+
+  <%= form_for :user, url: '/users' do |f| %>
+
+    Name: <%= f.text_field :name %>
+    Password: <%= f.password_field :password %>
+    Password Confirmation: <%= f.password_field :password_confirmation %>
+    <%= f.submit "Create New Admin" %>
+
+  <% end %>
+</div>

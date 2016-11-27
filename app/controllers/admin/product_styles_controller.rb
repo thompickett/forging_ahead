@@ -1,13 +1,13 @@
-class Admin::ProductStylesController < ApplicationController
+class Admin::ProductStylesController < AdminController
 
   def new
-    @product_style = ProductStyles.new
+    @product_style = ProductStyle.new
     @products = Product.all
     @styles = Style.all
   end
 
   def create
-    @product_style = ProductStyles.new(project_params)
+    @product_style = ProductStyle.new(project_params)
     if @product_style.save
       redirect_to admin_product_path(@product_style.product.name)
     else

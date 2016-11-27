@@ -35,12 +35,12 @@ gem 'figaro'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 gem 'turbolinks', '~> 5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# use font-awesome-rails for interactive images 
+# use font-awesome-rails for interactive images
 gem "font-awesome-rails"
 
 # Use the responders gem to serve up api endpoints with json
