@@ -1,0 +1,66 @@
+.left-side {
+  width: 50%;
+}
+
+.title-text {
+  position: absolute;
+  margin-left: 1%;
+  margin-right: 0%;
+  margin-top: 1.5%;
+  padding: 0%;
+}
+
+#spiral-stair-photo {
+  height:100vh;
+  float: left;
+  margin-left: 21%;
+}
+
+.nav-lights {
+  margin-top: 2%;
+  float: left;
+  width: 50%;
+}
+
+.nav-light {
+  float: left;
+  width: 25%;
+  text-align: center;
+}
+
+.nav-light-photo {
+  width: 90%;
+}
+
+#additional-info {
+  float: left;
+  width: 50%;
+  margin-top: 5%;
+  text-align: center;
+  font-size: 27px;
+}
+
+#business-motto {
+}
+
+#address-text {
+  font-size: 15px;
+  position: fixed;
+  width: 50%;
+  text-align: center;
+  bottom: 0;
+}
+
+.nav-lights a {
+  color: #84888A;
+}
+
+.nav-lights a:hover {
+  color: #84888A;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #FDFAC5, 0 0 20px #FDFAC5, 0 0 30px #FDFAC5, 0 0 40px #EA9639, 0 0 50px #EA9639, 0 0 75px #EA9639;
+  letter-spacing: .5px;
+}
+
+.nav-lights a:visited {
+  color: #84888A;
+}

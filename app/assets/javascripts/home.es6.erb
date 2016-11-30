@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  let navLights = $(".nav-lights");
+  let navLights = $(".nav-light");
 
   for(let i = 0; i < navLights.length; i++) {
     navLights[i].addEventListener("mouseover", lightUp);
@@ -8,11 +8,9 @@ $(document).ready(function(){
 
   function lightUp() {
     this.children[0].src = "<%= asset_path('light_one.png') %>"
-    this.children[1].classList.add("lit-up-color")
   };
 
   function lightDown() {
     this.children[0].src = "<%= asset_path('light_one_alt.png') %>"
-    this.children[1].classList.remove("lit-up-color")
   };
 });
