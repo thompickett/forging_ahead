@@ -1,48 +1,60 @@
-<h1 class='pageText titleText' >Forging Ahead Inc.</h1>
-<h2 class='pageText ownerText' >by Rod Pickett</h2>
+<div class='left-side'>
+  <div class='title-text smith-red-text'>
+    <h1><strong>Forging Ahead Inc.</strong></h1>
+    <h2><strong>by Rod Pickett</strong></h2>
+  </div>
 
-<div id="main-page-background" >
-  <img class="" id="main-page-background-photo" src="<%= asset_path('spiral-stair.png') %>" alt="light" />
+  <div id='spiral-stair'>
+    <img id='spiral-stair-photo' src="<%= asset_path('spiral-stair.png') %>" alt="spiral stairway" />
+  </div>
 </div>
 
-<a href='/products'>
-  <div class='nav-lights'>
-    <img class="light-dif" id="gallery-light" src="<%= asset_path('light_one_alt.png') %>" alt="light" />
-    <div id="gallery-link" class="pageText">Gallery</div>
-  </div>
-</a>
+<div class='nav-lights'>
 
-<a href='#'>
-  <div class='nav-lights'>
-    <img class="light-dif" id="store-light" src="<%= asset_path('light_one_alt.png') %>" alt="light" />
-    <div id="store-link" class="pageText">Store</div>
-  </div>
-</a>
+  <a href='/products' >
+    <div class='nav-light'>
+      <%= image_tag asset_path('light_one_alt.png'), class:'nav-light-photo', alt:"unlit light" %>
+      <p class='light-up-color'>Gallery</p>
+    </div>
+  </a>
 
-<a href='/about'>
-  <div class='nav-lights'>
-    <%= image_tag asset_path('light_one_alt.png'), alt:"light", class:"light-dif", id:"about-light" %>
-    <div class='pageText' id="about-link">About us</div>
-  </div>
-</a>
+  <a href='#'>
+    <div class='nav-light'>
+      <%= image_tag asset_path('light_one_alt.png'), class:'nav-light-photo', alt:"unlit light" %>
+      <p class='light-up-color'>Store</p>
+    </div>
+  </a>
 
-<a href='#'>
-  <div class='nav-lights'>
-    <img class="light-dif" id="contact-light" src="<%= asset_path('light_one_alt.png') %>" alt="light" />
-    <div id="contact-link" class="pageText">Contact us</div>
-  </div>
-</a>
+  <a href='/about'>
+    <div class='nav-light'>
+      <%= image_tag asset_path('light_one_alt.png'), class:'nav-light-photo', alt:"unlit light" %>
+      <p class='light-up-color'>About us</p>
+    </div>
+  </a>
 
-<div class='pageText listText' id="description">
-  <p>Moving metal</p>
-  <p>Making it beautiful</p>
-  <p>Creating functional art</p>
+
+  <a href='#'>
+    <div class='nav-light'>
+      <%= image_tag asset_path('light_one_alt.png'), class:'nav-light-photo', alt:"unlit light" %>
+      <p class='light-up-color'>Contact us</p>
+    </div>
+  </a>
 </div>
 
-<p class='pageText addressText'>
-  211 S. Skylane Dr., Durango, CO, 81303 ~ (970)259-9706
-</p>
+<div id='additional-info'>
+  <div class='smith-red-text'>
+    <p>Moving metal</p>
+    <p>Making it beautiful</p>
+    <p>Creating functional art</p>
+  </div>
 
-<p class='pageText copyrightText'>
-  Copyright Forging Ahead Inc 2016
-</p>
+  <div id='address-text' class='offwhite-text'>
+    <p>
+      211 S. Skylane Dr., Durango, CO, 81303 ~ (970)259-9706
+    </p>
+
+    <p>
+      Copyright Forging Ahead Inc 2016
+    </p>
+  </div>
+</div>
