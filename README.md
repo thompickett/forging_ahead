@@ -1,24 +1,33 @@
-# README
+Visit Forging Ahead live: http://forgingaheadinc.herokuapp.com/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Description
 
-Things you may want to cover:
+Forging Ahead is a gallery website for a blacksmithing company in Durango, CO.  
 
-* Ruby version
+## Setup
 
-* System dependencies
+If you want to to use this application locally, follow these steps.
 
-* Configuration
+Clone the project from github.
 
-* Database creation
+```
+ $ git clone https://github.com/thompickett/forging_ahead.git
+```
 
-* Database initialization
+Navigate into project.
 
-* How to run the test suite
+```
+$ cd forging_ahead
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Bundle the project using the Gemfile.
 
-* Deployment instructions
+```
+$ bundle
+```
 
-* ...
+Create the database and migrate it.
+
+```
+$ rake db:create db:migrate
+```
