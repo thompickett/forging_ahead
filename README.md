@@ -1,4 +1,4 @@
-Visit Forging Ahead live: http://forgingaheadinc.herokuapp.com/
+Visit Forging Ahead live: https://stormy-atoll-52591.herokuapp.com/ (actual client page's new address as of 7-30-18 http://www.forgingaheadinc.com/index.html)
 
 ## Description
 
